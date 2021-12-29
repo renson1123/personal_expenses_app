@@ -23,7 +23,7 @@ class TransactionList extends StatelessWidget {
                   ),
                   padding: EdgeInsets.all(10),
                   child: Text(
-                    '\$${transactions[index].amount}', // By putting a backslash(\)before the dollar sign it will escape from being a reserved keyword
+                    '\$${transactions[index].amount.toStringAsFixed(2)}', // By putting a backslash(\)before the dollar sign it will escape from being a reserved keyword, toStringAsFixed limits the demical places
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
