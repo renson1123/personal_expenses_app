@@ -24,6 +24,12 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Flutter App'),
+        actions: <Widget>[
+          IconButton(
+              icon:
+                  Icon(Icons.add), // Adds Icon Button on the AppBar at the top
+              onPressed: () {})
+        ],
       ),
       body: SingleChildScrollView(
         // Adds Scrolling Functionality
@@ -45,6 +51,13 @@ class MyHomePage extends StatelessWidget {
             UserTransactions()
           ],
         ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation
+          .centerFloat, // Setting the FloatingActionButtonLocation's location
+      floatingActionButton: FloatingActionButton(
+        // Adds a FloatingAction Button at the Bottom
+        child: Icon(Icons.add),
+        onPressed: () {},
       ),
     );
   }
