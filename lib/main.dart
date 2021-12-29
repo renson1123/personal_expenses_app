@@ -28,6 +28,8 @@ class MyHomePage extends StatelessWidget {
         amount: 16.54,
         date: DateTime.now())
   ];
+  String titleInput;
+  String amountInput;
 
   @override
   Widget build(BuildContext context) {
@@ -58,13 +60,21 @@ class MyHomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
                   TextField(
-                    decoration: InputDecoration(labelText: 'Title'),
+                    decoration: InputDecoration(
+                        labelText:
+                            'Title'), // set up where we register every keystore
+                    onChanged: (value) => titleInput = value,
                   ),
                   TextField(
                     decoration: InputDecoration(labelText: 'Amount'),
+                    onChanged: (value) => amountInput =
+                        value, // set up where we register every keystore
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      print(titleInput);
+                      print(amountInput);
+                    },
                     child: Text('Add transaction'),
                     style: TextButton.styleFrom(
                       textStyle: const TextStyle(),
