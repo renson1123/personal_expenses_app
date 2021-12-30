@@ -59,8 +59,11 @@ class _MyHomePageState extends State<MyHomePage> {
       context: ctx,
       builder: (_) {
         return GestureDetector(
-          onTap: () {},
+          onTap:
+              () {}, // This catches this tapping on that bottom sheet and avoids that the sheet gets closed if you tap on the sheet.
+          // It still gets closed if you tap on the background but not on the sheet.
           child: NewTransaction(_addNewTransaction),
+          // This catches the tap event and this avoids that the sheet closes when you tap on the sheet itself.
           behavior: HitTestBehavior.opaque,
         );
       },
